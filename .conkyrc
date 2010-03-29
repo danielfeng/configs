@@ -1,0 +1,38 @@
+background yes
+font Zekton:size=8
+xftfont Tahoma:pixelsize=8
+use_xft yes
+xftalpha 0.1
+update_interval 1.0
+total_run_times 0
+own_window yes
+own_window_type override
+own_window_transparent yes
+own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
+double_buffer yes
+draw_shades no
+draw_outline no
+draw_borders no
+draw_graph_borders no
+minimum_size 250 10
+#maximum_width 500
+
+alignment bottom_left
+gap_x 10
+gap_y 10
+no_buffers yes
+cpu_avg_samples 2
+override_utf8_locale yes
+uppercase no # set to yes if you want all text to be in uppercase
+use_spacer none
+
+TEXT
+${color #FF0000}$nodename - $sysname $kernel  ${color #0000FF}Uptime: $uptime
+${color #0077ff}CPU:$color ${cpu}% ${color #0077ff}${cpubar 5,85}   ${color orange}Disk I/O: $color${diskio}
+${color lightred}RAM Usage:$mem/$memmax - $memperc% $membar
+${color lightblue}Swap Usage: $swap/$swapmax - $swapperc% ${swapbar}
+${color #FFFF00}HD Usage: ${fs_used_perc /}%   ${fs_used /}/${fs_size /}   ${fs_bar /}
+${color orange}Processes: $processes     		 ${color grey}Running:$color $running_processes     		 ${color red}CPU Temp:${color lightgrey} ${acpitemp} ℃
+${color #00FF00}DOWN: ${color #CCCCCC}${downspeed eth0}	          						  ${color #00FF00}UP: ${color #CCCCCC}${upspeed eth0}
+${color #00FF00}TOTAL: ${color #CCCCCC}${totaldown eth0}	          						${color #00FF00}TOTAL: ${color #CCCCCC}${totalup eth0}
+
